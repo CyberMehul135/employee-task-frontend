@@ -39,10 +39,10 @@ const Navbar = () => {
     <nav className="w-full h-[70px] border border-gray-700 bg-gray-800 z-20 fixed">
       <div
         className={`w-full max-w-[1600px] h-full mx-auto px-5 max-md:px-3 flex items-center relative ${
-          isUserAdmin.type == "Admin" ? "justify-between" : "justify-center"
+          isUserAdmin?.type == "Admin" ? "justify-between" : "justify-center"
         }`}
       >
-        {isUserAdmin.type === "Admin" && (
+        {isUserAdmin?.type === "Admin" && (
           <Sling
             size={24}
             toggled={isSidebarOpen}
@@ -53,7 +53,7 @@ const Navbar = () => {
         <span className="text-lg max-md:text-[17px] tracking-widest max-md:text-center">
           {navHeading}
         </span>
-        {isUserAdmin.type === "Admin" ? (
+        {isUserAdmin?.type === "Admin" ? (
           <PowerSettingsNewIcon
             onClick={handleLogout}
             sx={{
@@ -84,7 +84,7 @@ const Navbar = () => {
             }`}
             onClick={() => setIsEmployeeProfileActive(!isEmployeeProfileActive)}
           >
-            {isUserAdmin.profileImage ? (
+            {isUserAdmin?.profileImage ? (
               <img
                 src={isUserAdmin.profileImage}
                 className="w-full h-full object-cover"
