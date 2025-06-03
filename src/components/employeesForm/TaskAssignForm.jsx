@@ -79,7 +79,7 @@ const TaskAssignForm = () => {
   };
 
   return (
-    <main className="w-full h-screen min-h-screen max-[538px]:h-full max-[538]:min-h-screen  max-w-[1600px] px-5 pt-[70px] pb-5 mx-auto">
+    <main className="w-full h-full min-h-screen max-w-[1600px] px-5 pt-[70px] pb-5 mx-auto">
       <form
         className="mt-8 max-w-[500px] mx-auto flex flex-col gap-8"
         onSubmit={handleTaskAssign}
@@ -135,7 +135,7 @@ const TaskAssignForm = () => {
             required
           />
         </div>
-        <div className="flex gap-2 w-full max-w-full max-[538px]:flex-col">
+        <div className="flex gap-2 w-full max-w-full max-sm:flex-col max-sm:gap-8">
           <div className="flex flex-col gap-2 relative w-full">
             <label className=" flex gap-3" htmlFor="category">
               <span>
