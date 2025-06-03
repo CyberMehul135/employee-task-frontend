@@ -1,0 +1,29 @@
+import { useContext } from "react";
+import { SavedDetailsPopupContext } from "../../context/SavedDetailsPopupContext";
+
+const SavedDetailsPopup = () => {
+  const { isDetailsSaved, setIsDetailsSaved } = useContext(
+    SavedDetailsPopupContext
+  );
+
+  return (
+    <div
+      className={`w-full max-w-[300px] px-5 absolute  left-1/2 -translate-x-1/2 transition-all ${
+        isDetailsSaved ? "top-[74px]" : "top-0"
+      }`}
+    >
+      <div className="relative w-full h-[35px]  bg-green-500 rounded-lg flex justify-center items-center gap-2 text-white font-bold">
+        <div>SAVED DETAILS</div>
+        <div className="w-[25px] h-[25px] rounded-full overflow-hidden">
+          <img
+            className="w-full h-full bg-white"
+            src="/accepted.gif"
+            alt="accepted"
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default SavedDetailsPopup;
