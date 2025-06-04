@@ -120,7 +120,7 @@ const EmployeeProfile = () => {
 
   return (
     <div
-      className={`fixed top-[73px]  transition-all duration-500 ease-in-out  ${
+      className={`fixed top-[73px] transition-all duration-500 ease-in-out  ${
         isEmployeeProfileActive
           ? "right-1 bg-black bg-opacity-50 w-full h-full"
           : "-right-[330px]"
