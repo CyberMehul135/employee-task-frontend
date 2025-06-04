@@ -76,7 +76,7 @@ const Navbar = () => {
           />
         ) : (
           <div
-            className={`w-[42px] h-[42px] max-sm:w-[33px] max-sm:h-[33px] rounded-full cursor-pointer bg-transparent flex justify-center items-center overflow-hidden outline ${
+            className={`w-[42px] h-[42px] max-sm:w-[40px] max-sm:h-[40px] rounded-full cursor-pointer bg-transparent flex justify-center items-center overflow-hidden outline ${
               isEmployeeProfileActive && " outline-blue-500"
             } ${
               isUserAdmin.type !== "Admin" &&

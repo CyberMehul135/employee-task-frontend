@@ -111,13 +111,23 @@ const EmployeeProfile = () => {
     setLogout(false);
   }, [confirmLogout]);
 
+  // HANDLE CLICK
+  const handleClick = (e) => {
+    if (e.target === e.currentTarget) {
+      setIsEmployeeProfileActive(false);
+    }
+  };
+
   return (
     <div
-      className={`fixed top-[73px] transition-all duration-500 ease-in-out ${
-        isEmployeeProfileActive ? "right-1" : "-right-[330px]"
+      className={`fixed top-[73px] w-full h-full  transition-all duration-500 ease-in-out  ${
+        isEmployeeProfileActive
+          ? "right-1 bg-black bg-opacity-50"
+          : "-right-[330px]"
       }`}
+      onClick={handleClick}
     >
-      <div className="w-[330px] h-full bg-gray-800 border border-gray-700 rounded-md px-6 py-5 flex flex-col items-center">
+      <div className="ml-auto w-[330px] h-auto bg-gray-800 border border-gray-700 rounded-md px-6 py-5 flex flex-col items-center">
         <form className="flex flex-col items-center" onSubmit={handleSubmit}>
           <div className="font-semibold text-[17px] text-gray-300">
             PROFILE DETAILS
@@ -301,7 +311,7 @@ const EmployeeProfile = () => {
           </div>
         </form>
         <button
-          className="bg-red-500 hover:bg-red-600 text-white py-1 px-5 rounded-sm mt-7 absolute top-[84%] right-[5%]"
+          className="bg-red-500 hover:bg-red-600 text-white py-1 px-5 rounded-sm  absolute top-[68%] mt-[3px] right-[2%]"
           onClick={handleLogout}
         >
           Logout

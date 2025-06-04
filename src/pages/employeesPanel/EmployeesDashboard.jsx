@@ -56,7 +56,7 @@ const EmployeesDashboard = () => {
   ).length;
 
   useEffect(() => {
-    setNavHeading("EMPLOYEES DASHBOARD");
+    setNavHeading("EMPLOYEE DASHBOARD");
   }, [setNavHeading]);
 
   const handleWork = async (e) => {
