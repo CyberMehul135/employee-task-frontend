@@ -96,7 +96,7 @@ const DeleteEmployeesComponent = () => {
         </div>
       </div>
       {/* INDIVIDUAL EMPLOYEE */}
-      <div className="w-full max-w-[1100px] h-[410px] max-lg:h-screen overflow-y-scroll mx-auto mt-1 px-5  flex flex-col gap-3 max-sm:px-0 scrollbar-hidden">
+      <div className="w-full max-w-[1100px] h-[410px] max-lg:h-screen overflow-y-scroll mx-auto mt-5 px-5 pb-10  flex flex-col gap-3 max-sm:px-0 scrollbar-hidden">
         {filteredEmployees?.map((employee, i) => {
           return (
             <div
