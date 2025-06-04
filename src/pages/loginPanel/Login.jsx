@@ -3,22 +3,26 @@ import { Button } from "@mui/material";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import apiUrl from "../../config";
+import DotLoader from "../../components/Loader/DotLoader";
 
 const Login = () => {
   const navigate = useNavigate();
-
+  const [isLoading, setIsLoading] = useState(false);
+  const [wrongCredentials, setWrongCredentials] = useState(false);
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
 
   const login = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
     try {
       const res = await axios.post(`${apiUrl}/api/auth/login`, {
         userEmail,
         userPassword,
       });
 
-      alert(res.data.message);
+      setIsLoading(false);
+      // setWrongCredentials(false);
       if (res.data?.employee?.type === "Employee") {
         navigate("/employeesdashboard");
         localStorage.setItem("data", JSON.stringify(res.data.employee.email));
@@ -28,7 +32,8 @@ const Login = () => {
       }
     } catch (err) {
       console.log(err);
-      alert("Login Fail");
+      setIsLoading(false);
+      setWrongCredentials(true);
     }
   };
 
@@ -50,6 +55,7 @@ const Login = () => {
               type="email"
               name="email"
               placeholder="Enter email"
+              required
             />
           </div>
           <div className="flex flex-col gap-1 mb-4">
@@ -63,12 +69,21 @@ const Login = () => {
               type="password"
               placeholder="Enter password"
               name="password"
+              required
             />
           </div>
 
           <Button variant="contained" color="info" type="submit">
-            Login
+            {isLoading ? <DotLoader /> : "Login"}
           </Button>
+
+          {wrongCredentials ? (
+            <div className="w-full text-white text-[15px] border border-red-500  flex justify-center rounded-md py-[6px] bg-red-500 bg-opacity-10 absolute -top-[45px] left-0">
+              Wrong Credentials
+            </div>
+          ) : (
+            ""
+          )}
         </form>
       </div>
     </div>
