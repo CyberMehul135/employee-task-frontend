@@ -61,10 +61,10 @@ const DeleteEmployeesComponent = () => {
   }, [allEmployees]);
 
   return (
-    <div className="w-full max-w-[1600px] mx-auto pt-[90px] h-screen px-5 text-white ">
+    <div className="w-full max-w-[1600px] mx-auto pt-[90px] h-full min-h-screen px-5 text-white ">
       {/* SEARCH */}
       <div className="w-full max-w-[1100px] mx-auto mt-3 px-5 flex justify-between items-center max-sm:px-0 max-sm:flex-col max-sm:mt-0">
-        <h2 className="text-lg ml-5 font-bold tracking-widest max-sm:mb-5 max-sm:underline max-sm:text-[16px]">
+        <h2 className="text-lg ml-5 font-bold tracking-widest max-sm:hidden">
           ALL EMPLOYEES
         </h2>
         <div className="flex gap-2 bg-gray-700 px-3 py-2 rounded-md w-full max-w-[300px]">
@@ -96,7 +96,7 @@ const DeleteEmployeesComponent = () => {
         </div>
       </div>
       {/* INDIVIDUAL EMPLOYEE */}
-      <div className="w-full max-w-[1100px] h-full max-h-[380px] overflow-y-scroll min-h-[380px] mx-auto mt-1 px-5  flex flex-col gap-3 scrollbar-hidden max-sm:px-0">
+      <div className="w-full max-w-[1100px] h-[410px] max-lg:h-screen overflow-y-scroll mx-auto mt-1 px-5  flex flex-col gap-3 max-sm:px-0 scrollbar-hidden">
         {filteredEmployees?.map((employee, i) => {
           return (
             <div

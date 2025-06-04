@@ -17,7 +17,7 @@ const AdminDashboard = () => {
   const { isUserAdmin, setIsUserAdmin } = useContext(IsUserAdminContext);
 
   useEffect(() => {
-    setNavHeading("DASHBOARD");
+    setNavHeading("ALL EMPLOYEES");
   }, []);
 
   // FETCH ALL-EMPLOYEES DATA
@@ -54,7 +54,7 @@ const AdminDashboard = () => {
   }, []);
 
   return (
-    <div className="w-full h-screen bg-gray-900 text-white relative">
+    <div className="w-full h-full bg-gray-900 text-white relative">
       <Navbar />
       <Sidebar />
       <DeleteEmployeesComponent />
