@@ -64,7 +64,7 @@ const DeleteEmployeesComponent = () => {
     <div className="w-full max-w-[1600px] mx-auto pt-[90px] h-screen px-5 text-white ">
       {/* SEARCH */}
       <div className="w-full max-w-[1100px] mx-auto mt-3 px-5 flex justify-between items-center max-sm:px-0 max-sm:flex-col max-sm:mt-0">
-        <h2 className="text-lg ml-5 font-bold tracking-widest max-sm:mb-5 max-sm:underline">
+        <h2 className="text-lg ml-5 font-bold tracking-widest max-sm:mb-5 max-sm:underline max-sm:text-[16px]">
           ALL EMPLOYEES
         </h2>
         <div className="flex gap-2 bg-gray-700 px-3 py-2 rounded-md w-full max-w-[300px]">

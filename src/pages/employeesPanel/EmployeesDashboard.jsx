@@ -129,7 +129,7 @@ const EmployeesDashboard = () => {
         >
           {decendingDates.map((date, i) => {
             return (
-              <div key={i} className="mt-[20px]">
+              <div key={i} className="mt-[20px] ">
                 <div className="font-semibold">
                   DATE :{" "}
                   {date.split("").slice(0, 10).join("") ==
