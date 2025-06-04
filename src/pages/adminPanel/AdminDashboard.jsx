@@ -40,9 +40,7 @@ const AdminDashboard = () => {
 
   const dataFetch = async () => {
     try {
-      const res = await axios.get(
-        `${apiUrl}/api/employees/employees/${email}`
-      );
+      const res = await axios.get(`${apiUrl}/api/employees/employees/${email}`);
       if (res.data.admin) {
         setIsUserAdmin(res.data.admin);
       }
