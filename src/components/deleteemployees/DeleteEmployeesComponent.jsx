@@ -28,9 +28,7 @@ const DeleteEmployeesComponent = () => {
   // FETCH ALL-EMPLOYEES DATA
   const allEmployeeData = async () => {
     try {
-      const res = await axios.get(
-        `${apiUrl}/api/employees/employees`
-      );
+      const res = await axios.get(`${apiUrl}/api/employees/employees`);
       const data = await res.data;
       setAllEmployees(data.allEmployees);
     } catch (err) {
@@ -63,10 +61,10 @@ const DeleteEmployeesComponent = () => {
   }, [allEmployees]);
 
   return (
-    <div className="w-full max-w-[1600px] mx-auto pt-[90px] h-screen pb-10 px-5 text-white ">
+    <div className="w-full max-w-[1600px] mx-auto pt-[90px] h-screen px-5 text-white ">
       {/* SEARCH */}
-      <div className="w-full max-w-[1100px] mx-auto mt-3 px-5 flex justify-between items-center">
-        <h2 className="text-lg ml-5 font-bold tracking-widest max-sm:hidden">
+      <div className="w-full max-w-[1100px] mx-auto mt-3 px-5 flex justify-between items-center max-sm:px-0 max-sm:flex-col max-sm:mt-0">
+        <h2 className="text-lg ml-5 font-bold tracking-widest max-sm:mb-5 max-sm:underline">
           ALL EMPLOYEES
         </h2>
         <div className="flex gap-2 bg-gray-700 px-3 py-2 rounded-md w-full max-w-[300px]">
@@ -81,7 +79,7 @@ const DeleteEmployeesComponent = () => {
         </div>
       </div>
       {/* HEADING */}
-      <div className="w-full max-w-[1100px] mx-auto mt-3 px-5  flex flex-col gap-3">
+      <div className="w-full max-w-[1100px] mx-auto mt-3 px-5  flex flex-col gap-3 max-sm:hidden">
         <div className="py-3 px-5 bg-red-500 font-bold rounded-sm grid [grid-template-columns:20px_100px_120px_220px_80px_100px_100px_120px_auto] max-lg:[grid-template-columns:20px_80px_120px_210px_80px_50px_50px_65px_auto] text-center items-center max-lg:flex max-lg:justify-center transition-all">
           <span className="max-lg:hidden">No</span>
           <span className="max-lg:hidden">Employee</span>
@@ -98,11 +96,11 @@ const DeleteEmployeesComponent = () => {
         </div>
       </div>
       {/* INDIVIDUAL EMPLOYEE */}
-      <div className="w-full max-w-[1100px] h-full max-h-[380px] overflow-y-scroll min-h-[380px] mx-auto mt-3 px-5  flex flex-col gap-3">
+      <div className="w-full max-w-[1100px] h-full max-h-[380px] overflow-y-scroll min-h-[380px] mx-auto mt-1 px-5  flex flex-col gap-3 scrollbar-hidden max-sm:px-0">
         {filteredEmployees?.map((employee, i) => {
           return (
             <div
-              className="py-3 px-5  border border-blue-500 S rounded-lg grid [grid-template-columns:20px_100px_120px_220px_80px_100px_100px_120px_auto]  max-lg:grid-cols-1 text-center items-center hover:-translate-y-[2px] hover:bg-blue-700 hover:bg-opacity-60 transition-all"
+              className="py-3 px-5 mt-2 border border-blue-500 S rounded-lg grid [grid-template-columns:20px_100px_120px_220px_80px_100px_100px_120px_auto]  max-lg:grid-cols-1 text-center items-center hover:-translate-y-[2px] hover:bg-blue-700 hover:bg-opacity-60 transition-all"
               key={employee._id}
             >
               <span className="max-lg:hidden">{i + 1}.</span>
