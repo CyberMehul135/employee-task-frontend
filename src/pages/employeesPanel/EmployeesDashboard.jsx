@@ -160,7 +160,11 @@ const EmployeesDashboard = () => {
                           onClick={handleWork}
                         >
                           <div className="flex justify-between items-center">
-                            <span className="p-1.5 bg-red-500 rounded-md">
+                            <span
+                              className={`p-1.5 bg-red-500 rounded-md ${
+                                each.failed && " bg-red-600"
+                              }`}
+                            >
                               {each.category}
                             </span>
                             <span>

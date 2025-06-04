@@ -12,19 +12,19 @@ const LogoutUi = () => {
         logout ? "scale-100 duration-300" : "scale-0 duration-200"
       }`}
     >
-      <div className="w-full h-full max-w-[600px] max-h-[200px] bg-gray-700 mx-auto flex flex-col justify-center items-center rounded-sm">
+      <div className="w-full h-full max-w-[600px] max-h-[200px] max-sm:max-h-[150px] bg-gray-700 mx-auto flex flex-col justify-center items-center rounded-sm">
         <p className="text-2xl font-normal text-center mt-2 max-md:text-[17px]">
           Are You Sure! You Want to Logout.
         </p>
-        <div className="mt-[30px] flex gap-5 justify-center">
+        <div className="mt-[30px] flex gap-5 justify-center max-sm:mt-[15px] max-sm:text-[16px]">
           <button
-            className="px-10 py-2 bg-white text-black rounded-sm hover:bg-gray-300 active:bg-white transition-all duration-2000"
+            className="px-10 py-2 max-sm:px-8 max-sm:py-[4px] bg-white text-black rounded-sm hover:bg-gray-300 active:bg-white transition-all duration-2000"
             onClick={() => setLogout(false)}
           >
             NO
           </button>
           <button
-            className="px-10 py-2 bg-blue-500 rounded-sm hover:bg-blue-600 active:bg-blue-800 transition-all duration-2000"
+            className="px-10 py-2 max-sm:py-[4px] bg-blue-500 rounded-sm hover:bg-blue-600 active:bg-blue-800 transition-all duration-2000"
             onClick={() => setConfirmLogout(true)}
           >
             YES
